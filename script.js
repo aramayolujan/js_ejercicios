@@ -8,7 +8,7 @@ const iva   = x => x * 0.21
 
 let precioProducto =  parseInt(prompt('ingresar precio producto'));
 
-//Descuento del 30% sobre el precio del producto//
+//Descuento del 30% //
 let descuento = 0.70 
 
 let precioFinal= multiplicar(suma(precioProducto, iva(precioProducto)), descuento) 
