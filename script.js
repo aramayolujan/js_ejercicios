@@ -43,3 +43,7 @@ productos.push(new producto("Jean Amanda","jean"))
 
 console.log(productos)
 
+// buscar por categorias
+let categoriaProducto =  prompt('ingresar categoria producto');
+const resultado = productos.filter ((el) => el.categoria.includes(categoriaProducto))
+console.log(resultado);
