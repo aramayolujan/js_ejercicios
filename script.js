@@ -19,8 +19,6 @@ console.log(precioFinal);
 
 //incorporar array
 
-
-
 class producto {
     constructor(nombre, categoria) {
         this.nombre = nombre;
@@ -38,12 +36,12 @@ const producto6 = new producto("Camisa Queen", "camisa")
 let productos = [ producto1 , producto2 , producto3 , producto4 , producto5 , producto6]
 
 
-//Agrego productos 
+//Agregar producto 
 productos.push(new producto("Jean Amanda","jean"))
 
 console.log(productos)
 
-// buscar por categorias
+//Buscar por categorias
 let categoriaProducto =  prompt('ingresar categoria producto');
 const resultado = productos.filter ((el) => el.categoria.includes(categoriaProducto))
 console.log(resultado);
