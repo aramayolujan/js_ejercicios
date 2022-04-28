@@ -11,10 +11,17 @@ let gananciaProducto =  parseInt(prompt('ingresar porcentaje de ganancias del pr
 
 
 //operaciones 
+
 let precioIva = suma(precioProducto,iva(precioProducto))
 let precioGanancias = dividir(multiplicar(precioIva, gananciaProducto),100)
 let precioFinal = suma(precioIva,precioGanancias);
-console.log(precioFinal);
+
+
+//mostrar HTML
+
+let contenedor = document.createElement("div");
+contenedor.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
+document.body.appendChild(contenedor);
 
 
 //incorporar array
@@ -41,7 +48,11 @@ productos.push(new producto("Jean Amanda","jean"))
 
 console.log(productos)
 
+
+
 //Buscar por categorias
 let categoriaProducto =  prompt('ingresar categoria producto');
 const resultado = productos.filter ((el) => el.categoria.includes(categoriaProducto))
 console.log(resultado);
+
+
