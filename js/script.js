@@ -1,28 +1,3 @@
-//Calcular precio final de un valor ingresado , agregandole IVA y un porcentaje de ganancias//
-const suma  = (a,b) => a + b
-const multiplicar = (a,b) => a * b
-const dividir = (a,b) => a / b
-const iva   = x => x * 0.21
-
-
-//Pedido de datos
-let precioProducto =  parseInt(prompt('ingresar precio producto'));
-let gananciaProducto =  parseInt(prompt('ingresar porcentaje de ganancias del producto'));
-
-
-//operaciones 
-
-let precioIva = suma(precioProducto,iva(precioProducto))
-let precioGanancias = dividir(multiplicar(precioIva, gananciaProducto),100)
-let precioFinal = suma(precioIva,precioGanancias);
-
-
-//mostrar HTML
-
-let contenedor = document.createElement("div");
-contenedor.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
-document.body.appendChild(contenedor);
-
 
 //incorporar array
 
@@ -51,14 +26,21 @@ console.log(productos)
 
 
 //Buscar por categorias
-let categoriaProducto =  prompt('ingresar categoria producto');
-const resultado = productos.filter ((el) => el.categoria.includes(categoriaProducto))
+const $buscarCategoria = document.querySelector('#buscarCategoria');
+const resultado = productos.filter ((el) => el.categoria.includes(buscarCategoria))
 
 //evento
-const botonBusqueda = (e) => {
-    console.log(resultado);
-}
+let input = document.getElementById("buscarCategoria");
 
-const boton = document.getElementById("boton");
+input.addEventListener("input", () => {
+    let valor = input.value;
 
-boton.addEventListener("click", botonBusqueda);
+    let buscarNombreCategoria = productos.filter((producto)=>{
+        return producto.categoria.toLowerCase() == valor.toLowerCase();
+    });
+
+    console.log(buscarNombreCategoria);
+});
+
+
+
