@@ -53,6 +53,12 @@ console.log(productos)
 //Buscar por categorias
 let categoriaProducto =  prompt('ingresar categoria producto');
 const resultado = productos.filter ((el) => el.categoria.includes(categoriaProducto))
-console.log(resultado);
 
+//evento
+const botonBusqueda = (e) => {
+    console.log(resultado);
+}
 
+const boton = document.getElementById("boton");
+
+boton.addEventListener("click", botonBusqueda);
