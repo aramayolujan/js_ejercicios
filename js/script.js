@@ -1,3 +1,23 @@
+//Calcular precio final de un valor ingresado , agregandole IVA y un porcentaje de ganancias//
+const suma  = (a,b) => a + b
+const multiplicar = (a,b) => a * b
+const dividir = (a,b) => a / b
+const iva   = x => x * 0.21
+
+
+//click boton
+
+let boton = document.getElementById("botonPrecioResultado");
+boton.onclick = () => {
+    let precio1 = document.getElementById("precioInicial").value;
+    let porcentaje1 = document.getElementById("porcentajeGanancia").value;
+    let precioIva = suma(parseInt(precio1),iva(parseInt(precio1)))
+    let precioGanancias = dividir(multiplicar(precioIva, parseInt(porcentaje1)),100)
+    let precioFinal = suma(precioIva,precioGanancias); 
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
+    document.body.appendChild(contenedor);
+};
 
 //incorporar array
 
@@ -41,6 +61,3 @@ input.addEventListener("input", () => {
 
     console.log(buscarNombreCategoria);
 });
-
-
-
