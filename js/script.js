@@ -5,10 +5,8 @@ const dividir = (a,b) => a / b
 const iva   = x => x * 0.21
 
 
-//click boton
-
-let boton = document.getElementById("botonPrecioResultado");
-boton.onclick = () => {
+let btnPrecioResultado = document.getElementById("botonPrecioResultado");
+btnPrecioResultado.onclick = () => {
     let precio1 = document.getElementById("precioInicial").value;
     let porcentaje1 = document.getElementById("porcentajeGanancia").value;
     let precioIva = suma(parseInt(precio1),iva(parseInt(precio1)))
@@ -37,13 +35,9 @@ const producto6 = new producto("Camisa Queen", "camisa")
 
 let productos = [ producto1 , producto2 , producto3 , producto4 , producto5 , producto6]
 
-
 //Agregar producto 
 productos.push(new producto("Jean Amanda","jean"))
-
 console.log(productos)
-
-
 
 //Buscar por categorias
 const $buscarCategoria = document.querySelector('#buscarCategoria');
@@ -61,3 +55,42 @@ input.addEventListener("input", () => {
 
     console.log(buscarNombreCategoria);
 });
+
+
+//JSON & storage
+localStorage.clear();
+
+function agregarLS (producto) {
+    const productos = localStorage.getItem("productos");
+    let productosArray = [];
+
+    if(productos !== null) {
+        productosArray = JSON.parse(productos);
+    }
+
+    productosArray.push(producto);
+    localStorage.setItem("productos", JSON.stringify(productosArray));
+
+
+}
+
+ const contenedorProductos = document.getElementById(contenedor);
+
+    productos.forEach((producto)=>{
+        const ul = document.createElement("ul");
+
+        const li1 = document.createElement("li");
+        li1.innerText = producto.nombre;
+
+        const li2 = document.createElement("li");
+        li2.innerText = producto.categoria;
+
+        const button = document.createElement("button");
+        button.addEventListener("click", () =>{
+            agregarLS(producto);
+        });
+        button.innerHTML = "añadir";
+        ul.append(li1, li2, button)
+
+        contenedor.append(ul);
+    });
