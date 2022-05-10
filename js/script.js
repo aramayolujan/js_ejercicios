@@ -12,9 +12,9 @@ btnPrecioResultado.onclick = () => {
     let precioIva = suma(parseInt(precio1),iva(parseInt(precio1)))
     let precioGanancias = dividir(multiplicar(precioIva, parseInt(porcentaje1)),100)
     let precioFinal = suma(precioIva,precioGanancias); 
-    let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
-    document.body.appendChild(contenedor);
+    let resultadoMuestra = document.createElement("div");
+    resultadoMuestra.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
+    document.body.appendChild(resultadoMuestra);
 };
 
 //incorporar array
@@ -94,3 +94,4 @@ function agregarLS (producto) {
 
         contenedor.append(ul);
     });
+    
