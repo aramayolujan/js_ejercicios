@@ -63,9 +63,8 @@ function agregarLS (producto) {
     const productos = localStorage.getItem("productos");
     let productosArray = [];
 
-    if(productos !== null) {
-        productosArray = JSON.parse(productos);
-    }
+    //operador AND
+    productos !== null && (productosArray = JSON.parse(productos));
 
     productosArray.push(producto);
     localStorage.setItem("productos", JSON.stringify(productosArray));
