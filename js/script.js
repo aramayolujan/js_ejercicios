@@ -9,11 +9,25 @@ let btnPrecioResultado = document.getElementById("botonPrecioResultado");
 btnPrecioResultado.onclick = () => {
    
 
-    if (document.getElementById("porcentajeGanancia").value == 0){
+    if (document.getElementById("precioInicial").value == 0 && document.getElementById("porcentajeGanancia").value == 0){
         //utilice la libreria sweetAlert para mostrar la advertencia 
         Swal.fire({
             title: 'Error!',
-            text: 'Ingrese un valor de ganancia mayor a 0',
+            text: 'Ingrese valores mayores a 0',
+            icon: 'error',
+            confirmButtonText: 'aceptar'
+          })
+    }else if (document.getElementById("precioInicial").value == 0){
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ingrese un precio mayor a 0',
+            icon: 'error',
+            confirmButtonText: 'aceptar'
+          })
+    }else if (document.getElementById("porcentajeGanancia").value == 0){
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ingrese una ganancia mayor a 0',
             icon: 'error',
             confirmButtonText: 'aceptar'
           })
