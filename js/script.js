@@ -7,13 +7,26 @@ const iva   = x => x * 0.21
 
 let btnPrecioResultado = document.getElementById("botonPrecioResultado");
 btnPrecioResultado.onclick = () => {
-    let precio1 = document.getElementById("precioInicial").value;
-    let porcentaje1 = document.getElementById("porcentajeGanancia").value;
-    let precioIva = suma(parseInt(precio1),iva(parseInt(precio1)))
-    let precioGanancias = dividir(multiplicar(precioIva, parseInt(porcentaje1)),100)
-    let precioFinal = suma(precioIva,precioGanancias); 
-    let resultadoMuestra = document.getElementById("resultadoMuestra");
-    resultadoMuestra.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`;
+   
+
+    if (document.getElementById("porcentajeGanancia").value == 0){
+        //utilice la libreria sweetAlert para mostrar la advertencia 
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ingrese un valor de ganancia mayor a 0',
+            icon: 'error',
+            confirmButtonText: 'aceptar'
+          })
+    }else  {
+        let precio1 = document.getElementById("precioInicial").value;
+        let porcentaje1 = document.getElementById("porcentajeGanancia").value;
+        let precioIva = suma(parseInt(precio1),iva(parseInt(precio1)))
+        let precioGanancias = dividir(multiplicar(precioIva, parseInt(porcentaje1)),100)
+        let precioFinal = suma(precioIva,precioGanancias); 
+        let resultadoMuestra = document.getElementById("resultadoMuestra");
+        resultadoMuestra.innerHTML = `<p>  El precio final del producto es de: ${precioFinal}</p>`
+    } 
+
 };
 
 //incorporar array
