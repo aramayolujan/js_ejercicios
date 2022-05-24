@@ -19,23 +19,24 @@ btnPrecioResultado.onclick = () => {
 //incorporar array
 
 class producto {
-    constructor(nombre, categoria) {
+    constructor(nombre, categoria, precio) {
         this.nombre = nombre;
         this.categoria = categoria;
+        this.precio = precio;
     }
 }
 
-const producto1 = new producto("Blazer Cler", "blazer")
-const producto2 = new producto("Blazer Paul", "blazer")
-const producto3 = new producto("Tapado Berlín", "tapado")
-const producto4 = new producto("Tapado Belix", "tapado")
-const producto5 = new producto("Camisa Boris", "camisa")
-const producto6 = new producto("Camisa Queen", "camisa")
+const producto1 = new producto("Blazer Cler", "blazer", "$15.990.-")
+const producto2 = new producto("Blazer Paul", "blazer", "$8.752.-")
+const producto3 = new producto("Tapado Berlín", "tapado", "$13.500.-")
+const producto4 = new producto("Tapado Belix", "tapado", "$17.900.-")
+const producto5 = new producto("Camisa Boris", "camisa", "$11.700.-")
+const producto6 = new producto("Camisa Queen", "camisa", "$7.390.-")
 
 let productos = [ producto1 , producto2 , producto3 , producto4 , producto5 , producto6]
 
 //Agregar producto 
-productos.push(new producto("Jean Amanda","jean"))
+productos.push(new producto("Jean Amanda","jean", "$9.690.-"))
 console.log(productos)
 
 //Buscar por categorias
@@ -83,12 +84,15 @@ function agregarLS (producto) {
         const li2 = document.createElement("li");
         li2.innerText = producto.categoria;
 
+        const li3 = document.createElement("li");
+        li3.innerText = producto.precio;
+
         const button = document.createElement("button");
         button.addEventListener("click", () =>{
             agregarLS(producto);
         });
         button.innerHTML = "añadir";
-        ul.append(li1, li2, button)
+        ul.append(li1, li2, li3, button)
 
         contenedor.append(ul);
     });
