@@ -1,0 +1,32 @@
+[
+    {
+        "imagen": "media/imgBlazerCler.jpg",
+        "nombre": "Blazer Cler",
+        "precio": "$15.990.-"
+    },
+    {
+        "imagen": "media/imgBlazerPaul.jpg",
+        "nombre": "Blazer Paul",
+        "precio": "$8.752.-"
+    },
+    {
+        "imagen": "media/imgTapadoBerlin.jpg",
+        "nombre": "Tapado Berlin",
+        "precio": "$13.500.-"
+    },
+    {
+        "imagen": "media/imgTapadoBelix.jpg",
+        "nombre": "Tapado Belix",
+        "precio": "$17.900.-"
+    },
+    {
+        "imagen": "media/imgCamisaBoris.jpg",
+        "nombre": "Camisa Boris",
+        "precio": "$11.700.-"
+    },
+    {
+        "imagen": "media/imgCamisaQueen.jpg",
+        "nombre": "Camisa Queen",
+        "precio": "$7.390.-"
+    }
+]
