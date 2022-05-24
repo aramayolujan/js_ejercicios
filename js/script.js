@@ -1,12 +1,57 @@
-fetch("/js/productos.json")
+const contenedorProductos = document.getElementById(contenedor);
+fetch("js/productos.json")
     .then( (response) => {
         return response.json();
     }).then( (productos) => {
-    console.log(productos);
+        productos.forEach((producto)=>{
+            const ul = document.createElement("ul");
+    
+            const li1 = document.createElement("li");
+            li1.innerText = producto.imagen;
+    
+            const li2 = document.createElement("li");
+            li2.innerText = producto.nombre;
+    
+            const li3 = document.createElement("li");
+            li3.innerText = producto.precio;
+    
+            const button = document.createElement("button");
+            button.addEventListener("click", () =>{
+                agregarLS(producto);
+            });
+            button.innerHTML = "añadir";
+            ul.append(li1, li2, li3, button)
+    
+            contenedor.append(ul);
+        });
 });
 
 
 /*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Calcular precio final de un valor ingresado , agregandole IVA y un porcentaje de ganancias//
 const suma  = (a,b) => a + b
@@ -65,27 +110,5 @@ function agregarLS (producto) {
 
 }
 
- const contenedorProductos = document.getElementById(contenedor);
 
-    productos.forEach((producto)=>{
-        const ul = document.createElement("ul");
-
-        const li1 = document.createElement("li");
-        li1.innerText = producto.nombre;
-
-        const li2 = document.createElement("li");
-        li2.innerText = producto.categoria;
-
-        const li3 = document.createElement("li");
-        li3.innerText = producto.precio;
-
-        const button = document.createElement("button");
-        button.addEventListener("click", () =>{
-            agregarLS(producto);
-        });
-        button.innerHTML = "añadir";
-        ul.append(li1, li2, li3, button)
-
-        contenedor.append(ul);
-    });
     */
