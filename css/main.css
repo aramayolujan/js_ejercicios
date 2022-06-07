@@ -56,6 +56,12 @@ body {
 
 }
 
+#resultadoMuestraGanancia{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #contenedor {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
