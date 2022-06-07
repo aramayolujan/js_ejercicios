@@ -1,41 +1,33 @@
 [
     {
-        "imagen":"../media/imgBlazerCler.jpg",
         "nombre": "Tombow Dual Brush M",
         "precio": "$603.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Tombow Dual Brush L",
         "precio": "603.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Tombow Dual Brush A",
         "precio": "$603.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Tombow Dual Brush N",
         "precio": "$603.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Fudenosuke Tombow M",
         "precio": "$1870.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Fudenosuke Tombow L",
         "precio": "$870.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Fudenosuke Tombow A",
         "precio": "$870.-"
     },
     {
-        "imagen": "imagen",
         "nombre": "Fudenosuke Tombow N",
         "precio": "$870.-"
     }
