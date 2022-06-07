@@ -38,7 +38,7 @@ btnPrecioResultado.onclick = () => {
         let precioGanancias = dividir(multiplicar(precioIva, parseInt(porcentaje1)),100)
         let precioFinal = suma(precioIva,precioGanancias); 
         let resultadoMuestra = document.getElementById("resultadoMuestra");
-        resultadoMuestra.innerHTML = `<p>  El precio final del producto es de: $${precioFinal}</p>`
+        resultadoMuestra.innerHTML = `<p>  El precio de venta del producto tendría que ser de: $${precioFinal}</p>`
     } 
 
 };
