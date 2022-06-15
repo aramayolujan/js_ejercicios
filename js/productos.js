@@ -1,13 +1,10 @@
 //PRODUCTOS ----------------------------------------------------------------------------------------------------
-const contenedorProductos = document.getElementById(contenedor);
-
 fetch("../js/productos.json")
     .then( (response) => {
         return response.json();
     }).then( (productos) => {
         productos.forEach((producto)=>{
             //localStorage
-            localStorage.clear();
             function agregarLS (producto) {
              const productos = localStorage.getItem("productos");
              let productosArray = [];
